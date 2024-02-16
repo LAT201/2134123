@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        #nao {
+            background-color: red;
+            color: white;
+        }
+
+        #sim {
+            background-color: green;
+            color: white;
+        }
+
+        #mensagem {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Logo tem boite?</h1>
+        <div class="respostas">
+            <button id="nao" onmouseover="fugir()">Não</button>
+            <button id="sim" onclick="mostrarMensagem()">Sim</button>
+        </div>
+        <div id="mensagem">Siga caralhooooo</div>
+    </div>
+    <script>
+        function fugir() {
+            const naoButton = document.getElementById('nao');
+            naoButton.style.position = 'absolute';
+            naoButton.style.left = Math.random() * (window.innerWidth - naoButton.clientWidth) + 'px';
+            naoButton.style.top = Math.random() * (window.innerHeight - naoButton.clientHeight) + 'px';
+        }
+
+        function mostrarMensagem() {
+            const mensagem = document.getElementById('mensagem');
+            mensagem.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
